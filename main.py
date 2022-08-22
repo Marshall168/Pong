@@ -43,6 +43,7 @@ def ball_restart():
 
 SPEED_X = SPEED_X * random.choice((1,-1))
 SPEED_Y = SPEED_Y * random.choice((1,-1))
+
 # Setup
 pygame.init()
 clock = pygame.time.Clock()
@@ -59,7 +60,10 @@ enemy = pygame.Rect(10, SCREEN_HEIGHT/2 - 50, 10,100)
 player_color = pygame.Color('coral')
 background_color = pygame.Color('grey5')
 
-
+# Text
+player_score = 0
+enemy_score = 0
+font = pygame.font.Font("freesansbold.ttf", 40)
 
 while True:
 	for event in pygame.event.get():
@@ -84,11 +88,14 @@ while True:
 	player_animation()
 	enemy_animation()
 
+# Drawings
 	screen.fill(background_color)
 	pygame.draw.rect(screen, player_color, player)
 	pygame.draw.rect(screen, player_color, enemy)
 	pygame.draw.ellipse(screen, player_color, ball)
 	pygame.draw.aaline(screen, player_color, (SCREEN_WIDTH/2,0), (SCREEN_WIDTH/2, SCREEN_HEIGHT))
+
+	
 
 	pygame.display.flip()
 	clock.tick(60)
