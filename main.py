@@ -95,7 +95,8 @@ while True:
 	pygame.draw.ellipse(screen, player_color, ball)
 	pygame.draw.aaline(screen, player_color, (SCREEN_WIDTH/2,0), (SCREEN_WIDTH/2, SCREEN_HEIGHT))
 
-	
+	player_text = font.render(f"{player_score}", True, 'coral')
+	screen.blit(player_text, (700, 50))
 
 	pygame.display.flip()
 	clock.tick(60)
