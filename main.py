@@ -113,7 +113,7 @@ while True:
 
 # Enemy Score
 	enemy_text = font.render(f"{enemy_score}", False, 'coral')
-	screen.blit(player_text, (560, 50))
+	screen.blit(enemy_text, (560, 50))
 
 	pygame.display.flip()
 	clock.tick(60)
